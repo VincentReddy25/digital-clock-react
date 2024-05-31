@@ -14,11 +14,15 @@ export default function App() {
         }
     }, [])
 
+
+    function addZero(number) {
+       return (number > 10 ? "" : "0") + number
+    }
     function displayTime() {
         let hours = time.getHours()
         let minutes = time.getMinutes()
         let seconds = time.getSeconds()
-        return `${hours} : ${minutes} : ${seconds}`
+        return `${addZero(hours)} : ${addZero(minutes)} : ${addZero(seconds)}`
     }
     return (
         <>
